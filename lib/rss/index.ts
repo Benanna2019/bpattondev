@@ -3,10 +3,13 @@ import { Feed } from "feed";
 import routes from "../../config/routes";
 import { baseEmail, baseUrl } from "../../config/seo";
 import type { Post } from "~/services/models/post";
+import { usePostMatchesData } from "~/utils";
 
-export async function generateRSS(posts: Post[]) {
+export async function generateRSS() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const posts = usePostMatchesData() as Post[];
   const date = new Date();
-  const updated = new Date(posts[0].publishedAt);
+  const updated = new Date(posts[0].publishedAt as string);
   const author = {
     name: "Ben Patton",
     email: baseEmail,

@@ -1,10 +1,10 @@
 import faker from "@faker-js/faker";
 
-import { User } from "~/services/models/user";
-import { services } from "~/services/services";
+import type { User } from "../../app/services/models/user";
+import { services } from "../../app/services/services";
 
-import { SessionServerFactory } from "~/session.server";
-import { LoaderContext } from "~/types";
+import { SessionServerFactory } from "../../app/session.server";
+import type { LoaderContext } from "../../app/types";
 
 declare global {
   namespace Cypress {
@@ -49,7 +49,13 @@ async function login({
     throw new Error("All test emails must end in @example.com");
   }
 
-  const user = await serverContext.UserServer.createUser(email, "reallystrongpassword");
+  const user = await serverContext.UserServer.createUser(
+    email,
+    "reallystrongpassword",
+    "Guest",
+    false,
+    "foo"
+  );
   cy.then(() => user).as("user");
 
   const response = await SessionServerFactory(serverContext as LoaderContext).createUserSession({

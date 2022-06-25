@@ -1,4 +1,5 @@
 import type { Session } from "@remix-run/node";
+import type { APIGatewayProxyEventV2 } from "aws-lambda";
 
 import type { User } from "./services/models/user";
 import type { ServerContext } from "./services/types";
@@ -25,6 +26,5 @@ export interface SessionServer {
 
 export type LoaderContext = ServerContext & {
   SessionServer: SessionServer;
-  req: any;
-  res: any;
+  event: APIGatewayProxyEventV2;
 };
