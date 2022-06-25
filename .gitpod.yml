@@ -1,0 +1,24 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: npm install && npm run build
+    command: npm run dev
+ports:
+  # Architect
+  - port: 3000
+    visibility: public
+    onOpen: ignore
+  - port: 6363
+    visibility: public
+    onOpen: ignore
+  - port: 2222
+    visibility: public
+    onOpen: ignore
+  # Cypress e2e
+  - port: 8811
+    visibility: public
+    onOpen: ignore
+  - port: 8002
+    visibility: public
+    onOpen: ignore
