@@ -39,20 +39,13 @@ function TableRow({ href, title, subtitle, date }: TableRowProps) {
       </strong>
       <span className="w-full shrink border-t border-dashed border-gray-300 dark:border-gray-800" />
       {subtitle && <span className="text-tertiary flex-none">{subtitle}</span>}
-      {date && (
-        <span className="text-quaternary flex-none font-mono">{date}</span>
-      )}
+      {date && <span className="text-quaternary flex-none font-mono">{date}</span>}
     </a>
   );
 }
 
 function SectionContainer(props: any) {
-  return (
-    <div
-      className="grid grid-cols-1 items-start gap-6 md:grid-cols-12"
-      {...props}
-    />
-  );
+  return <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-12" {...props} />;
 }
 
 const workHistory = [
@@ -112,49 +105,29 @@ export function Intro() {
                     <span>writer</span>
                   </Link>
                   . I&apos;m currently writing a{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://careerchangers.co"
-                  >
+                  <a target="_blank" rel="noopener noreferrer" href="https://careerchangers.co">
                     newsletter for career changers{" "}
                   </a>
                   becoming software developers to help them jobs quicker.
                 </p>
                 <p>
-                  I currently for,{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://comparecredit.com"
-                  >
+                  I currently work for,{" "}
+                  <a target="_blank" rel="noopener noreferrer" href="https://comparecredit.com">
                     CompareCredit
                   </a>
-                  , on an awesome dev team. I get to work alongside developers
-                  who went to the code school I went to in Charleston, SC called
-                  Jack Russell Coding School.
+                  , on an awesome dev team. I get to work alongside developers who went to the code
+                  school I went to in Charleston, SC called Jack Russell Coding School.
                 </p>
                 <p>
-                  Before becoming a software developer I worked in non-profit. I
-                  made a living off of fundraising and was able to work with
-                  people in all stages of life. The last year and a half of
-                  non-profit work was spent working with Senior Adults. My
-                  non-profit days are the catalyst for much of my thinking and
-                  how I hope to impact the world through software.
+                  Before becoming a software developer I worked in non-profit. I made a living off
+                  of fundraising and was able to work with people in all stages of life. The last
+                  year and a half of non-profit work was spent working with Senior Adults. My
+                  non-profit days are the catalyst for much of my thinking and how I hope to impact
+                  the world through software.
                 </p>
                 <p>
-                  Recently I have made the decision to be much more active on
-                  LinkedIn. I spent a lot of time on twitter and one day was
-                  really discouraged with the people who, in my estimation,
-                  should be helping one another, serving others, and putting
-                  good into the world, where devouring one another.
-                </p>
-                <p>
-                  So it occurred to me that 1. I don't have to be on this
-                  platform and 2. I can put good into the world. LinkedIn is not
-                  everyone's favorite but I find it to be less hostile than
-                  twitter. I share thoughts daily on for career changers,
-                  product builders, and personal branding.
+                  My main aim here on the web is to put good into the world. I believe I can do that
+                  through software, teaching, and enabling others on their journey.
                 </p>
               </div>
             </SectionContent>
@@ -171,9 +144,7 @@ export function Intro() {
                   date={""}
                 />
                 <TableRow
-                  href={
-                    "https://www.youtube.com/channel/UCdznsnxpwF9qQCqfOomUqXg"
-                  }
+                  href={"https://www.youtube.com/channel/UCdznsnxpwF9qQCqfOomUqXg"}
                   title={"YouTube"}
                   subtitle={"Subscribe"}
                   date={""}
@@ -226,12 +197,7 @@ export function Intro() {
               <div className="flex flex-col space-y-3">
                 {speakingData
                   ? speakingData.map((s) => (
-                      <TableRow
-                        href={s.href}
-                        title={s.title}
-                        date={s.date}
-                        key={s.href}
-                      />
+                      <TableRow href={s.href} title={s.title} date={s.date} key={s.href} />
                     ))
                   : null}
               </div>

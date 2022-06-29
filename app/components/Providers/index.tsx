@@ -1,11 +1,10 @@
 import * as React from "react";
 // import { FathomProvider } from "./Fathom";
-import { SEO } from "./SEO";
-import { Toast } from "./Toaster";
+// import { SEO } from "./SEO";
+// import { Toast } from "./Toaster";
 
 interface Props {
   children?: any;
-  pageProps: any;
 }
 
 const globalNavigationContext = {
@@ -29,9 +28,6 @@ export function Providers({ children }: Props) {
 
   return (
     <>
-      <SEO />
-      <Toast />
-
       <GlobalNavigationContext.Provider value={state}>{children}</GlobalNavigationContext.Provider>
     </>
   );

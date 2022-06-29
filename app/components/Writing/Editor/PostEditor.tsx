@@ -57,10 +57,7 @@ export const PostEditorContext = React.createContext<PostEditorContextState>({
   setIsPreviewing: (isPreviewing: boolean) => {},
 });
 
-export function PostEditor(
-  { data }: PostEditorData,
-  actionData: PostEditorActionData
-) {
+export function PostEditor({ data }: PostEditorData, actionData: PostEditorActionData) {
   const scrollContainerRef = React.useRef(null);
 
   const editOrCreatPost = data === null ? "Add Post" : "Edit Post";

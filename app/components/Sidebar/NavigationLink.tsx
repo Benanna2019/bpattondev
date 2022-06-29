@@ -30,10 +30,7 @@ export function NavigationLink({
 }: NavLink) {
   const { setIsOpen } = React.useContext(GlobalNavigationContext);
   return (
-    <li
-      className="flex items-stretch space-x-1"
-      onClick={() => setIsOpen(false)}
-    >
+    <li className="flex items-stretch space-x-1" onClick={() => setIsOpen(false)}>
       {href === "/logout" ? (
         <LogoutForm info={{ href, label, Icon, Accessory, Action, isActive }} />
       ) : !isExternal ? (
