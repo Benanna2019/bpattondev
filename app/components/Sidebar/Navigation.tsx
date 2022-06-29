@@ -4,16 +4,14 @@ import { useOptionalUser } from "~/utils";
 
 import {
   ExternalLinkIcon,
-  FigmaIcon,
   GitHubIcon,
   HomeIcon,
-  PodcastIcon,
-  SecurityChecklistIcon,
-  StaffDesignIcon,
   WritingIcon,
   YouTubeIcon,
   SignOutIcon,
   LinkedInIcon,
+  LinksIcon,
+  AppDissectionIcon,
 } from "../Icon";
 import { NavigationLink } from "./NavigationLink";
 import SignOutAction from "./SignOutAction";
@@ -44,49 +42,50 @@ export function SidebarNavigation() {
           trailingAction: null,
           isExternal: false,
         },
+
+        {
+          href: "/links",
+          label: "Links",
+          icon: LinksIcon,
+          trailingAccessory: null,
+          isActive: location.pathname === "/links",
+          trailingAction: null,
+          isExternal: false,
+        },
       ],
     },
     {
       label: "Projects",
       items: [
         {
-          href: "https://designdetails.fm",
-          label: "Design Details",
-          icon: PodcastIcon,
+          href: "https://careerchangers.co",
+          label: "Career Changers",
+          icon: AppDissectionIcon,
           trailingAccessory: ExternalLinkIcon,
           isActive: false,
           trailingAction: null,
           isExternal: true,
         },
 
-        {
-          href: "https://staff.design",
-          label: "Staff Design",
-          icon: StaffDesignIcon,
-          trailingAccessory: ExternalLinkIcon,
-          trailingAction: null,
-          isExternal: true,
-        },
+        // {
+        //   href: "https://dunedain.dev",
+        //   label: "Web Dev Course",
+        //   icon: WebDevCourseIcon,
+        //   trailingAccessory: ExternalLinkIcon,
+        //   isActive: false,
+        //   trailingAction: null,
+        //   isExternal: true,
+        // },
 
-        {
-          href: "https://figma.com/@brian",
-          label: "Figma Plugins",
-          icon: FigmaIcon,
-          trailingAccessory: ExternalLinkIcon,
-          isActive: false,
-          trailingAction: null,
-          isExternal: true,
-        },
-
-        {
-          href: "/security",
-          label: "Security Checklist",
-          icon: SecurityChecklistIcon,
-          trailingAccessory: null,
-          isActive: false,
-          trailingAction: null,
-          isExternal: false,
-        },
+        // {
+        //   href: "https://forwhomthebilltolls.com",
+        //   label: "Invoice Manager",
+        //   icon: WritingIcon,
+        //   trailingAccessory: ExternalLinkIcon,
+        //   isActive: false,
+        //   trailingAction: null,
+        //   isExternal: true,
+        // },
       ],
     },
     {
