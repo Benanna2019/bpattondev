@@ -12,10 +12,7 @@ interface Props {
   backButtonHref?: string;
   magicTitle?: boolean;
   titleRef?: React.MutableRefObject<HTMLParagraphElement | null> | null | any;
-  scrollContainerRef?:
-    | React.MutableRefObject<HTMLDivElement | null>
-    | null
-    | any;
+  scrollContainerRef?: React.MutableRefObject<HTMLDivElement | null> | null | any;
   children?: React.ReactNode;
   leadingAccessory?: React.ReactNode;
   trailingAccessory?: React.ReactNode;
@@ -72,11 +69,9 @@ export function TitleBar({
     const titleBottom = titleRef.current.getBoundingClientRect().bottom - 56;
     const initialOffsets = initialTitleOffsetsRef.current;
 
-    let offsetAmount =
-      parseFloat((titleBottom / initialOffsets.bottom).toFixed(2)) * 100;
+    let offsetAmount = parseFloat((titleBottom / initialOffsets.bottom).toFixed(2)) * 100;
 
-    let opacityOffset =
-      parseFloat((titleTop / initialOffsets.top).toFixed(2)) * -1;
+    let opacityOffset = parseFloat((titleTop / initialOffsets.top).toFixed(2)) * -1;
 
     setOffset(Math.min(Math.max(offsetAmount, 0), 100));
     setOpacity(opacityOffset);
@@ -84,8 +79,7 @@ export function TitleBar({
 
   React.useEffect(() => {
     scrollContainerRef?.current?.addEventListener("scroll", handler);
-    return () =>
-      scrollContainerRef?.current?.removeEventListener("scroll", handler);
+    return () => scrollContainerRef?.current?.removeEventListener("scroll", handler);
   }, [title, titleRef, scrollContainerRef]);
 
   React.useEffect(() => {
@@ -100,8 +94,7 @@ export function TitleBar({
 
   React.useEffect(() => {
     const isDarkMode =
-      window?.matchMedia &&
-      window?.matchMedia("(prefers-color-scheme: dark)").matches;
+      window?.matchMedia && window?.matchMedia("(prefers-color-scheme: dark)").matches;
     if (isDarkMode) setDarkMode(true);
   }, []);
 

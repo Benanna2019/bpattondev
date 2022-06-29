@@ -18,6 +18,7 @@ import type { User } from "./services/models/user";
 import type { LoaderContext } from "./types";
 import { getEnv } from "./env.server";
 import type { Post } from "./services/models/post";
+import { Providers } from "./components/Providers";
 
 export const links: LinksFunction = () => {
   return [
@@ -51,7 +52,7 @@ export const loader: LoaderFunction = async ({ request, context }) => {
   });
 };
 
-export default function App() {
+function App() {
   const data = useLoaderData() as LoaderData;
   return (
     <html lang="en" className="h-full">
@@ -71,5 +72,13 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function AppWithProviders() {
+  return (
+    <Providers>
+      <App />
+    </Providers>
   );
 }
