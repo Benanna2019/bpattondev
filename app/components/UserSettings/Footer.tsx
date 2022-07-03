@@ -11,9 +11,7 @@ export function UserSettingsFooter() {
     return (
       <div className="flex justify-between space-x-4 py-12">
         <Form action="/logout" method="post">
-          <Button href="/logout" as="logout" type="submit">
-            Log out
-          </Button>
+          <Button as="logout">Log out</Button>
         </Form>
         <DeleteUserDialog trigger={<DeleteButton>Delete account</DeleteButton>} />
       </div>

@@ -1,6 +1,6 @@
 import { Form } from "@remix-run/react";
 
-export default function SignOutAction() {
+export function SignOutAction({ children }: any) {
   return (
     <Form action="/logout" method="post">
       <button
