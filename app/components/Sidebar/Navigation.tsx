@@ -14,7 +14,7 @@ import {
   AppDissectionIcon,
 } from "../Icon";
 import { NavigationLink } from "./NavigationLink";
-import SignOutAction from "./SignOutAction";
+import { SignOutAction } from "./SignOutAction";
 
 export function SidebarNavigation() {
   const location = useLocation();

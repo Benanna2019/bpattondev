@@ -8,24 +8,16 @@ interface BaseButtonProps {
   disabled?: boolean;
 }
 
-type ButtonAsButton = BaseButtonProps &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonAsButton = BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-type ButtonAsLink = BaseButtonProps &
-  React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type ButtonAsLink = BaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-const actionChecker = "delete_my_account" || "new_post" || "edit_post";
+const actionChecker = "delete_my_account" || "new_post" || "edit_post" || "logout";
 
-function BaseButton({
-  href = null,
-  as = null,
-  forwardedRef = null,
-  type = null,
-  ...rest
-}) {
-  if (href && as === actionChecker) {
+function BaseButton({ href = null, as = null, forwardedRef = null, type = null, ...rest }) {
+  if (as === actionChecker) {
     <button type="submit" />;
   }
   if (href && as) {
